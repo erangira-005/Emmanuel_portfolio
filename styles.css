@@ -1,0 +1,156 @@
+:root {
+    color-scheme: light dark;
+    --bg: light-dark(#faf8f4, #111315);
+    --surface: light-dark(#ffffff, #181b1e);
+    --text: light-dark(#1c1c1f, #ebe8e2);
+    --line: light-dark(#ddd8cd, #2c3034);
+    --accent: light-dark(#0b6b5a, #5ccfb3);
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    ;
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    font-family: Georgia, serif;
+}
+
+a {
+    color: #0b6b5a;
+}
+
+main {
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+section {
+    margin: 3rem 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.75rem 0.5rem;
+    text-decoration: none;
+
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.chips li {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    background: var(--surface);
+}
+
+p {
+    max-width: 42rem;
+}
+
+.cards {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.card {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #111315;
+        --surface: #181b1e;
+        --text: #ebe8e2;
+        --line: #2c3034;
+        --accent: #5ccfb3;
+    }
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    outline: none;
+}
+
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 0.6rem 1rem;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+button {
+    font: inherit;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+}
+
+.status {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    color: var(--accent);
+}
