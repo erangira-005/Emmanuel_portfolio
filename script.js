@@ -6,7 +6,7 @@ function currentTheme() {
     return root.dataset.theme || (prefersDark.matches ? "dark" : "light");
 }
 
-// Put this BEFORE the line: button.hidden = false;
+// Restore the visitor's saved choice, if there is one
 const saved = localStorage.getItem("theme");
 if (saved) {
     root.dataset.theme = saved;
@@ -18,9 +18,9 @@ button.setAttribute("aria-pressed", String(currentTheme() === "dark"));
 button.addEventListener("click", () => {
     const next = currentTheme() === "dark" ? "light" : "dark";
     root.dataset.theme = next;
-    // Put this INSIDE the click handler, right after you work out `next`
+    // Remember the choice for next time
     localStorage.setItem("theme", next);
-    button.setAtrribute("aria-pressed", String(next === "dark"));
+    button.setAttribute("aria-pressed", String(next === "dark"));
 });
 
 

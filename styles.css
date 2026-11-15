@@ -18,7 +18,6 @@
 body {
     background: var(--bg);
     color: var(--text);
-    ;
     font-family: system-ui, sans-serif;
     line-height: 1.6;
 }
@@ -29,7 +28,7 @@ h2 {
 }
 
 a {
-    color: #0b6b5a;
+    color: var(--accent);
 }
 
 main {
@@ -109,20 +108,9 @@ p {
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #111315;
-        --surface: #181b1e;
-        --text: #ebe8e2;
-        --line: #2c3034;
-        --accent: #5ccfb3;
-    }
-}
-
 :focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 3px;
-    outline: none;
 }
 
 .skip-link {
